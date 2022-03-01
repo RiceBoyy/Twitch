@@ -1,7 +1,7 @@
 <template>
     <section>
         <div> <!-- Intro -->
-            <h1>Big dick</h1>
+            <h1>Wellcome to Night Zone</h1>
         </div>
         <div> <!-- small explanation -->
         </div>
