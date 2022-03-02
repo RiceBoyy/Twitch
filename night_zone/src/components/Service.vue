@@ -10,8 +10,11 @@
                         If the PERSON kills all the enemy team in one round, and win the round. <br>
                         It will qualify as a clear, and you will have cleared this mission.
                     </p>
-                    <span>5 Points</span><span>Custom Game</span><span>Unreated</span><br>
-                    <span>Ranked</span>
+                    <span class="earn-gameType">Custom Game</span>
+                    <span class="earn-gameType">Unreated</span>
+                    <span class="earn-gameType">Ranked</span>
+                    <br>
+                    <span class="earn-point">5 Points</span>
                 </li>
                 <li>
                     <h2>02</h2>
@@ -20,7 +23,11 @@
                         If the PERSON knife's one from the enemy team. <br>
                         It will qualify as a clear, and you will have cleared this mission.  
                     </p>
-                    <span>1 Points</span>
+                    <span class="earn-gameType">Custom Game</span>
+                    <span class="earn-gameType">Unreated</span>
+                    <span class="earn-gameType">Ranked</span>
+                    <br>
+                    <span class="earn-point">1 Point</span>
                 </li>
                 <li>
                     <h2>03</h2>
@@ -29,7 +36,11 @@
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo mollitia dolores 
                         repellendus odit provident rerum exercitationem eos nihil fugit asperiores?
                     </p>
-                    <span>2 Points</span>
+                    <span class="earn-gameType">Custom Game</span>
+                    <span class="earn-gameType">Unreated</span>
+                    <span class="earn-gameType">Ranked</span>
+                    <br>
+                    <span class="earn-point">2 Points</span>
                 </li>
                 <li>
                     <h2>04</h2>
@@ -38,7 +49,11 @@
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo mollitia 
                         rerum exercitationem eos nihil fugit asperiores?
                     </p>
-                    <span>3 Points</span>
+                    <span class="earn-gameType">Custom Game</span>
+                    <span class="earn-gameType">Unreated</span>
+                    <span class="earn-gameType">Ranked</span>
+                    <br>
+                    <span class="earn-point">3 Points</span>
                 </li>
             </ul>
         </div>
@@ -51,7 +66,7 @@
     </div>
 </template>
 
-<style>
+<style lang="scss">
 
     .Earn {
         padding: 2rem;

@@ -3,21 +3,17 @@
         <h1>About</h1>
         <div id="about-content">
             <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                Rem quisquam nobis qui maxime autem similique suscipit quos,
-                molestiae ullam at totam quas nam. Eveniet tenetur excepturi est cum magni totam ducimus 
-                corporis, voluptates non quibusdam earum hic, at debitis 
-                laboriosam! Aliquid et ipsum at culpa quidem, provident commodi maxime ut necessitatibus deserunt ab vel quaerat accusantium perferendis, nemo distinctio dolorum?
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam facilis eaque molestias non nihil, modi dicta in iure perferendis adipisci tempora vero corrupti earum fugit a nesciunt recusandae est illum debitis temporibus. Eius ea, dolor iusto dicta fuga alias quod aperiam nam neque nesciunt vitae laborum ipsa necessitatibus porro provident hic soluta non enim maiores. Ipsa adipisci labore nostrum enim voluptas facere amet nobis exercitationem, illum modi eum, quisquam excepturi expedita sunt nemo suscipit cumque saepe aliquid ducimus ea temporibus?
             </p>
         </div>
         <div class="twitch-users">
-            <a class="link-twitch" href=""> <!-- new user -->
+            <a class="link-twitch" href="https://www.twitch.tv/tthyrrestrup"> <!-- new user -->
                 <div class="box">
                     <div class="box-img">
-                        <img class="twitch-img" src="https://static-cdn.jtvnw.net/jtv_user_pictures/8b24e5aa-693f-4880-9ccf-2775ac373db3-profile_image-150x150.png" alt="https://www.twitch.tv/pott3r">
+                        <img class="twitch-img" src="../assets/img6.png" alt="https://www.twitch.tv/tthyrrestrup">
                     </div>
                     <div class="box-title title-white">
-                        <p>Something</p>
+                        <p>tthyrrestrup</p>
                     </div>
                 </div>
             </a>
@@ -27,7 +23,7 @@
                         <img class="twitch-img" src="../assets/img1.png" alt="https://www.twitch.tv/punitato">
                     </div>
                     <div class="box-title title-white">
-                        <p>Something</p>
+                        <p>punitato</p>
                     </div>
                 </div>
             </a>
@@ -51,6 +47,24 @@
                     </div>
                 </div>
             </a>
+        </div>
+        <div class="User-mentions">
+            <h2>Honorable Mentions</h2>
+            <p>
+                Here are some user that are not connected to twitch but are joined in on this game.
+            </p>
+            <div>
+                <a class="link-twitch" href="https://www.twitch.tv/tthyrrestrup"> <!-- new user -->
+                    <div class="box">
+                        <div class="box-img">
+                            <img class="twitch-img" src="../assets/img6.png" alt="https://www.twitch.tv/tthyrrestrup">
+                        </div>
+                        <div class="box-title title-white">
+                            <p>tthyrrestrup</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
         </div>
     </div>
 </template>
@@ -135,12 +149,22 @@
         font-family: sans-serif;
         font-weight: bold;
         font-size: 20px;
-        margin-top: -50px;
+        margin-top: -10px;
         height: 40px;
     }
 
     .title-white {
         color: #fff;
     }
+    .User-mentions {
+        padding: 5rem;
+    }
+
+    .User-mentions h2 { /* Honorable mention */
+        color: #fff;
+        text-align: center;
+    }
+
+
 
 </style>

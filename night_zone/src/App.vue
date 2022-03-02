@@ -151,6 +151,7 @@
     grid-area: menu;
   }
 
+
   #logo {
     font-family: "Lobster", cursive;
     font-weight: lighter;
