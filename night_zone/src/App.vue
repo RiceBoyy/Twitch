@@ -82,7 +82,7 @@
 
   nav { /* navbar starts here */
     grid-area: nav;
-    background-color: #ffffff1e;
+    background-color: #ffffff00;
      width: 100vw;
     /*
     background-color: #2c3e50;
@@ -94,7 +94,7 @@
   }
 
   #navbar {
-    background-color: #161B21;
+    background-color: #161b2179;
     color: #000;
     position: fixed;
     top: 0;
