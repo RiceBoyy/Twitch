@@ -1,63 +1,183 @@
 <script setup>
-  import WellcomeVue from './components/Wellcome.vue';
+  import AboutVue from './components/About.vue';
+  import ContactVue from './components/Contact.vue';
+  import ServiceVue from './components/Service.vue'
 </script>
 
 <template>
-  <main>
-    <div class="top-hero">
-      <h1 id="logo">Night Zone</h1>
-      <nav class="navbar">
-        <ul class="navlist">
+  <div class="container">
+    <nav id="navbar">
+      <div class="nav-wrapper">
+        <ul id="menu-list">
           <li><a class="nav-link" href="">Home</a></li>
           <li><a class="nav-link" href="">About</a></li>
           <li><a class="nav-link" href="">Store</a></li>
           <li><a class="nav-link" href="">Contact</a></li>
         </ul>
-      </nav>
+      </div>
+    </nav>
+    <main>
+      <div class="wellcome">
+        <h1 id="logo">Night Zone</h1>
+        
+      </div>
+    </main>
+    <!--
+    <div id="sidebar">
+      sidebar
     </div>
-    <WellcomeVue />
-  </main>
+    -->
+    <div id="content1">
+      <AboutVue />
+    </div>
+    <div id="content2">
+      <ServiceVue />
+    </div>
+    <div id="content3">
+      <ContactVue />
+    </div>
+    <footer>
+      <div class="foot-wrapper">
+        
+      </div>
+    </footer>
+  </div>
+
 </template>
 
 <style>
-
-  /*
-    $bg-color:        #1D1B1B;
-    $bg-color2:       #161B21;
-    $bg-color-light:  #262223;
-    $fg-color:        #EC4D37;
-  */
-
-  #app {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
-    margin-top: 60px;
+  body {
+    background-color: #00000098;
+    margin: 0;
+    padding: 0;
   }
 
-  .navbar {
+  #app {
+    /*
+      $bg-color:        #1D1B1B;
+      ½$bg-color2:      #161B21;
+      $bg-color-light:  #262223;
+      $fg-color:        #EC4D37;
+    */
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+  }
+
+  /* controlling the layout with grid */
+
+  .container {
+    background-color: #343d46;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.4fr 2.2fr 1.2fr 1.2fr 1.2fr 1fr;
+    grid-template-areas: 
+      "nav"
+      /*"sidebar"*/
+      "menu"
+      "content1"
+      "content2"
+      "content3"
+      "footer";
+    grid-gap: 0.2rem;
+  }
+
+  nav { /* navbar starts here */
+    grid-area: nav;
+    background-color: #ffffff1e;
+     width: 100vw;
+    /*
+    background-color: #2c3e50;
     display: flex;
     align-items: center;
     justify-content: space-between;
     min-height: 10vh;
+    */
   }
 
-  .navlist {
-    display: flex;
+  #navbar {
+    background-color: #161B21;
+    color: #000;
+    position: fixed;
+    top: 0;
+    height: 60px;
+    line-height: 60px;
+   
+    z-index: 10;
+  }
+
+  .nav-wrapper {
+    text-align: center;
+    width: 100%;
+  } 
+
+
+  #navbar ul {
+    list-style: none;
+    /* margin-right: 14px; */
+    margin-top: -2px;
+    transition: transform 0.5s ease-out;
+    -webkit-transition: transform 0.5s ease-out;
+    padding-inline-start: 0;
+  }
+
+  #navbar li {
+    display: inline;
     list-style: none;
   }
 
-  .nav-link {
-    padding-left: 5rem;
-    font-size: 1.2rem;
+  #navbar li a {
+    color: rgba(255, 255, 255, 0.829);
+    font-size: 0.8em;
+    height: 50px;
+    padding: 0 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  #navbar li a:hover {
+    /* border-bottom: 1px solid rgb(28, 121, 184); */
+    color: rgb(218, 218, 218);
+    transition: all 1s ease;
+    -webkit-transition: all 1s ease;
+  }
+
+  
+  @media( orientation: landscape) {
+    #navbar ul {
+      display: inline-block;
+    }
+  }
+
+  main { /* Main page start here */
+    grid-area: menu;
   }
 
   #logo {
     font-family: "Lobster", cursive;
     font-weight: lighter;
-    font-size: 2rem;
+    font-size: 5rem;
+    color: #fff;
+    text-align: center;
   }
 
+  #sidebar { /* sidebar starts here */
+    grid-area: sidebar;
+  }
+
+  #content1 { /* content 1 starts here */
+    grid-area: content1;
+  }
+
+  #content2 { /* content 2 starts here */
+    grid-area: content2;
+  }
+
+  #content3 { /* content 3 starts here */
+    grid-area: content3;
+  }
+
+  footer { /* footer starts here */
+    grid-area: footer;
+  }
+
+  
 </style>
