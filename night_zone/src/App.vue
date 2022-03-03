@@ -1,7 +1,8 @@
 <script setup>
   import AboutVue from './components/About.vue';
   import ContactVue from './components/Contact.vue';
-  import ServiceVue from './components/Service.vue'
+  import ServiceVue from './components/Service.vue';
+  import RewardVue from './components/Reward.vue';
 </script>
 
 <template>
@@ -32,6 +33,7 @@
     </div>
     <div id="content2">
       <ServiceVue />
+      <RewardVue />
     </div>
     <div id="content3">
       <ContactVue />
@@ -68,10 +70,9 @@
     background-color: #343d46;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 0.4fr 2.2fr 1.2fr 1.2fr 1.2fr 1fr;
+    grid-template-rows: 0.1fr 0.5fr 0.6fr 0.5fr 1fr;
     grid-template-areas: 
       "nav"
-      /*"sidebar"*/
       "menu"
       "content1"
       "content2"
@@ -83,7 +84,7 @@
   nav { /* navbar starts here */
     grid-area: nav;
     background-color: #ffffff00;
-     width: 100vw;
+    width: 100vw;
     /*
     background-color: #2c3e50;
     display: flex;
@@ -180,5 +181,21 @@
     grid-area: footer;
   }
 
+  @media (max-width: 800px) {
+    .container {
+    background-color: #343d46;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.1fr 0.3fr 0.3fr 0.5fr 1fr;
+    grid-template-areas: 
+      "nav"
+      "menu"
+      "content1"
+      "content2"
+      "content3"
+      "footer";
+    grid-gap: 0.2rem;
+  }
+  }
   
 </style>

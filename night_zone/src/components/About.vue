@@ -3,7 +3,18 @@
         <h1>About</h1>
         <div id="about-content">
             <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam facilis eaque molestias non nihil, modi dicta in iure perferendis adipisci tempora vero corrupti earum fugit a nesciunt recusandae est illum debitis temporibus. Eius ea, dolor iusto dicta fuga alias quod aperiam nam neque nesciunt vitae laborum ipsa necessitatibus porro provident hic soluta non enim maiores. Ipsa adipisci labore nostrum enim voluptas facere amet nobis exercitationem, illum modi eum, quisquam excepturi expedita sunt nemo suscipit cumque saepe aliquid ducimus ea temporibus?
+                Wellcome to night zone. This project is about a point system game, 
+                that it's made for twitch streamers and the streamers followers. This game is very easy to understand.
+            </p>
+            <p>
+                The rules are very simple, you as a user play a game like a first person shooter game.
+                While you and your team plays the game of you're choice. There are mission for how you group kills the enemy team.
+                You will be rewarded with points, and with does points you and you're group will be able to redeem something.
+            </p>
+            <p>
+                There are penalties in this little game. That can be if you are in the last place on your team.
+                you will get minus points. <br>
+                This game was made for these twitch streamers, and are avaleble for everybody.
             </p>
         </div>
         <div class="twitch-users">
@@ -54,16 +65,15 @@
                 Here are some user that are not connected to twitch but are joined in on this game.
             </p>
             <div>
-                <a class="link-twitch" href="https://www.twitch.tv/tthyrrestrup"> <!-- new user -->
-                    <div class="box">
-                        <div class="box-img">
-                            <img class="twitch-img" src="../assets/img6.png" alt="https://www.twitch.tv/tthyrrestrup">
-                        </div>
-                        <div class="box-title title-white">
-                            <p>tthyrrestrup</p>
-                        </div>
+                <div class="box"> <!-- new user -->
+                    <div class="box-img">
+                        <img class="twitch-img" src="../assets/img7.jpg" alt="RiceBoyy">
                     </div>
-                </a>
+                    <div class="box-title title-white">
+                        <p>RiceBoyy</p>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
@@ -73,7 +83,6 @@
     #about-wrapper  {
         background-color: #65737e;
         padding: 1.5rem;
-        height: 100vh;
     }
 
     #about-wrapper h1 {
@@ -94,6 +103,7 @@
     }
 
     #about-content p {
+        font-family: "Anonymous Pro", Monospace;
         color: #fff;
     }
 
@@ -163,8 +173,14 @@
     .User-mentions h2 { /* Honorable mention */
         color: #fff;
         text-align: center;
+        font-family: monospace, "Papyrus";
     }
 
+    .User-mentions p {
+        color: #fff;
+        text-align: center;
+        font-family: "Anonymous Pro", Monospace;
+    }
 
 
 </style>
