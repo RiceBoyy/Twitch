@@ -3,9 +3,10 @@
     <h1>Contact</h1>
     <div class="contact-wrapper">
       <p>
-        This website is made Owen J. De Guzman. <br />
+        This website is made (AsianDude) AKA RiceBoyy, and credit to (TOXIC) for name picking.<br />
         If you wish to come and join us or just want to come in contact with the developer
-        or the streamers. you can join ours discord servers down below.
+        and the streamers. <br> 
+        You can join ours discord servers down below.
       </p>
       <ul>
         <li>
@@ -57,7 +58,8 @@
   padding: 2rem;
 }
 #Contact {
-  background-color: #343d46;
+  background-color: #434c67;
+  padding: 6rem
 }
 #Contact h1,
 .contact-wrapper p {

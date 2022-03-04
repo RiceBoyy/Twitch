@@ -75,7 +75,8 @@
           <span class="earn-point">3 Points</span>
         </li>
       </ul>
-
+    </div>
+    <div class="lose">
       <!-- How to lose points -->
       <h1>How to lose points</h1>
       <ul class="earn-wrap">
@@ -177,15 +178,25 @@
 
 <style lang="scss">
 #Service-wrapper {
-  background-color: #343d46;
+  background-color: #434c67;
 }
 
 .Earn {
-  padding: 0 2rem;
+  padding: 4rem;
+}
+.lose {
+    padding: 4rem;
+}
+
+.lose h1 {
+  text-align: center;
+  color: #fff;
+  margin: 0;
+  padding: 2rem;  
 }
 
 .pointlist {
-  padding: 2rem;
+  padding: 6rem;
 }
 
 .Earn h1 {
