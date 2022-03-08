@@ -93,7 +93,7 @@ export default {
   },
 
   methods: {
-    // firestore database
+    // firestore database user
     async getUserCol(db) {
       const userCol = collection(db, "user");
       const userSnap = await getDocs(userCol);
@@ -101,9 +101,10 @@ export default {
       return userList;
     },
 
-    // data array loop
+    // data array loop user
     async getUsers(db) {
       const users = this.getUserCol(db).then((_data) => {
+        console.log(_data); // to see array remove it when done
         return _data;
       });
       const e = await users;
@@ -112,14 +113,14 @@ export default {
       }
     },
 
-        /*
+    // firestore add point
     async updateUser(db, userID, points) {
       const userRef = doc(db, "user", userID);
       await updateDoc(userRef, {
         score: points,
       });
     },
-    */
+
   },
 
   mounted() {
