@@ -5,6 +5,7 @@ import ServiceVue from "./components/Service.vue";
 import RewardVue from "./components/Reward.vue";
 import WellcomeVue from "./components/Wellcome.vue";
 import navbarVue from "./components/navbar.vue"
+import ChallengeVue from "./components/Challenge.vue"
 </script>
 
 <template>
@@ -20,8 +21,11 @@ import navbarVue from "./components/navbar.vue"
         <AboutVue />
       </section>
       <section id="content2">
+        <ChallengeVue />
         <ServiceVue />
-        <RewardVue />
+        <!-- 
+          <RewardVue />
+         -->
       </section>
       <section id="content3">
         <ContactVue />
@@ -91,6 +95,7 @@ header {
 #content2 {
   /* content 2 starts here */
   grid-area: content2;
+  background-color: #434c67;
 }
 
 #content3 {

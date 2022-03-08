@@ -1,7 +1,6 @@
 <template>
   <div class="Wellcome">
     <h1 class="home-title">
-
         <span class="text">Twitch Family</span>
         <span class="text">Point System Game</span>
     </h1>
