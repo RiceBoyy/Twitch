@@ -104,11 +104,6 @@
   </div>
 </template>
 
-<script>
-import {db} from '../firebase';
-const documentPath = 'userData/user';
-</script>
-
 <style>
 #about-wrapper {
   background-color: #434c67;

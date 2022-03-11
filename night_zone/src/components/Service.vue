@@ -56,9 +56,9 @@
           <!-- Row 4 -->
           <article class="row fadeIn nfl">
             <ul>
-              <li>{{ user.name }}</li>
-              <li>{{ user.Points }}</li>
-              <li><button @click="user.Points++">Change</button></li>
+              <li>Pott3r</li>
+              <li>0</li>
+              <li><button>Change</button></li>
             </ul>
           </article>
         </div>
@@ -67,67 +67,7 @@
   </div>
 </template>
 
-<script>
-import { defineProps, reactive, ref } from "vue";
-import { db } from "../firebase";
-import { collection, doc, updateDoc, getDocs } from "firebase/firestore/lite";
-
-export default {
-  setup() {
-    const user = reactive({ name: "Pott3r", Points: 0 });
-    const person = {
-      username: "RiceBoyy",
-      points: 0,
-    };
-    console.log(person.points);
-    return {
-      user
-    };
-  },
-
-  data() {
-      return {
-          userIDS: [],
-          userScores: [],
-      }
-  },
-
-  methods: {
-    // firestore database user
-    async getUserCol(db) {
-      const userCol = collection(db, "user");
-      const userSnap = await getDocs(userCol);
-      const userList = userSnap.docs.map((item) => item.data());
-      return userList;
-    },
-
-    // data array loop user
-    async getUsers(db) {
-      const users = this.getUserCol(db).then((_data) => {
-        console.log(_data); // to see array remove it when done
-        return _data;
-      });
-      const e = await users;
-      for (let i = 0; e.length > i; i++) {
-        this.userIDS.push(e[i].id);
-      }
-    },
-
-    // firestore add point
-    async updateUser(db, userID, points) {
-      const userRef = doc(db, "user", userID);
-      await updateDoc(userRef, {
-        score: points,
-      });
-    },
-
-  },
-
-  mounted() {
-    this.getUsers(db);
-  }
-};
-</script>
+<script src="../JS/userAccount.js"></script>
 
 <style lang="scss">
 #Service-wrapper {

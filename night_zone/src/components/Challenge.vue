@@ -113,73 +113,7 @@
   </div>
 </template>
 
-<script>
-import { db } from "../firebase";
-import { collection, getDocs } from "firebase/firestore/lite";
-
-export default {
-  setup(){
-
-  },
-  data() {
-    return {
-      ChallengeIDS: [],
-      DrunkChallengeIDS: [],
-    };
-
-  },
-
-
-  methods: {
-    // firestore database challenge
-    async getChallengeCol(db) {
-      const ChallengeCol = collection(db, "Challenge");
-      const ChallengeSnap = await getDocs(ChallengeCol);
-      const ChallengeList = ChallengeSnap.docs.map((item) => item.data());
-      return ChallengeList;
-    },
-
-    // data array loop challenge
-    async getChallenges(db) {
-      const Challenges = this.getChallengeCol(db).then((_data) => {
-        console.log(_data); // to see array remove it when done
-        return _data;
-      });
-      const a = await Challenges;
-      for (let i = 0; a.length > i; i++) {
-        this.ChallengeIDS.push(a[i].id);
-      }
-    },
-
-    // firestore database Drunk Challenge
-    async GetDrunkChallengeCol(db) {
-      const DrunkChallengeCol = collection(db, "drunkChallenge");
-      const DrunkChallengeSnap = await getDocs(DrunkChallengeCol);
-      const DrunkChallengeList = DrunkChallengeSnap.docs.map((item) => item.data());
-      return DrunkChallengeList;
-    },
-
-    // data array loop drunk challenge
-    async GetDrunkChallenge(db) {
-      const DrunkChallenge = this.GetDrunkChallengeCol(db).then((_Drunkdata) => {
-        console.log(_Drunkdata); // to see array remove it when done
-        return _Drunkdata;
-      });
-      const b = await DrunkChallenge;
-      for (let i = 0; b.length > i; i++) {
-        this.DrunkChallengeIDS.push(b[i].id);
-      }
-    },
-
-    // something
-  },
-
-  mounted() {
-    this.getChallenges(db);
-    this.GetDrunkChallenge(db);
-  }
-};
-</script>
+<script src="../JS/Challenge.js"></script>
 
 <style lang="scss" scoped>
 #Challenge-wrapper {
