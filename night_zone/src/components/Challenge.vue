@@ -4,75 +4,13 @@
       <!-- How to get points -->
       <h1>How to earn</h1>
       <ul class="earn-wrap">
-        <li>
-          <h2>01</h2>
-          <h3>ACE</h3>
-          <p>
-            If the PERSON kills all the enemy team in one round, and win the round. It
-            will qualify as a clear, and you will have cleared this mission.
-          </p>
-          <span class="earn-gameType">Custom Game</span>
-          <span class="earn-gameType">Unreated</span>
-          <span class="earn-gameType">Ranked</span>
-          <br />
-          <br />
-          <span class="earn-point">5 Points</span>
-        </li>
-        <li>
-          <h2>02</h2>
-          <h3>KNIFE</h3>
-          <p>
-            If the PERSON knife's one from the enemy team. <br />
-            It will qualify as a clear, and you will have cleared this mission.
-          </p>
-          <span class="earn-gameType">Custom Game</span>
-          <span class="earn-gameType">Unreated</span>
-          <span class="earn-gameType">Ranked</span>
-          <br />
-          <br />
-          <span class="earn-point">1 Point</span>
-        </li>
-        <li>
-          <h2>03</h2>
-          <h3>CLUTCH</h3>
-          <p>
-            If the PERSON is the last one on the team, and kills / wins the round. It will
-            qualify as a clear, and you will have cleared this mission.
-          </p>
-          <span class="earn-gameType">Custom Game</span>
-          <span class="earn-gameType">Unreated</span>
-          <span class="earn-gameType">Ranked</span>
-          <br />
-          <br />
-          <span class="earn-point">2 Points</span>
-        </li>
-        <li>
-          <h2>04</h2>
-          <h3>MVP</h3>
-          <p>
-            If the PERSON is the MVP of the hole game. <br />
-            It will qualify as a clear, and you will have cleared this mission.
-          </p>
-          <span class="earn-gameType">Custom Game</span>
-          <span class="earn-gameType">Unreated</span>
-          <span class="earn-gameType">Ranked</span>
-          <br />
-          <br />
-          <span class="earn-point">1 Points</span>
-        </li>
-        <li>
-          <h2>05</h2>
-          <h3>ONE BULLET<br />DOUBLE KILL</h3>
-          <p>
-            If the PERSON kills, two enemys with one bullet. It will qualify as a clear,
-            and will be rewarded.
-          </p>
-          <span class="earn-gameType">Custom Game</span>
-          <span class="earn-gameType">Unreated</span>
-          <span class="earn-gameType">Ranked</span>
-          <br />
-          <br />
-          <span class="earn-point">3 Points</span>
+        <li v-for="(item, i) in challenges" :key="i">
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.description }}</p>
+          <div v-for="(type, j) in item.gameType" :key="j">
+            <span class="earn-gameType">{{ type }}</span>
+          </div>
+          <span class="earn-point">{{ item.point }}</span>
         </li>
       </ul>
     </div>
@@ -113,7 +51,62 @@
   </div>
 </template>
 
-<script src="../JS/Challenge.js"></script>
+<script>
+import { db } from "../firebase";
+import { collection, getDocs } from "firebase/firestore/lite";
+
+export default {
+    data() {
+        return {
+          challenges: [],
+        };
+    
+    },
+    
+    
+    methods: {
+        // firestore database challenge
+      async getChallengeCol(db) {
+        const ChallengeCol = collection(db, "Challenge");
+        const ChallengeSnap = await getDocs(ChallengeCol);
+        const ChallengeList = ChallengeSnap.docs.map((item) => item.data());
+        return ChallengeList;
+      },
+      // data array loop challenge
+      async getChallenges(db) {
+        const challenges = this.getChallengeCol(db).then((_data) => {
+          //console.log(_data); // to see array remove it when done
+          return _data;
+        });
+
+        const a = await challenges;
+        for (let i = 0; a.length > i; i++) {
+          this.challenges.push(a[i]);
+        }
+      },
+        // something
+      async getChallenge(db) {
+        const challenge = this.getChallengeCol(db).then((_data) => {
+          return _data;
+        });
+        const chal = await challenge;
+        const challenge1 = chal[0];
+        const challenge2 = chal[1];
+        const challenge3 = chal[2];
+        const challenge4 = chal[3];
+        const challenge5 = chal[4];
+
+        const { title, description, point, gameType } = challenge1;
+        // console.log(title, description, point, gameType); // get all the obj from array location 0;
+      },
+    },
+    
+    mounted() {
+      this.getChallenges(db);
+      this.getChallenge(db);
+    }
+}
+</script>
 
 <style lang="scss" scoped>
 #Challenge-wrapper {
