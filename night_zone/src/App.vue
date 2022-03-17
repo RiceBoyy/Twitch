@@ -23,9 +23,7 @@ import ChallengeVue from "./components/Challenge.vue"
       <section id="content2">
         <ChallengeVue />
         <ServiceVue />
-        <!-- 
-          <RewardVue />
-         -->
+        <!-- <RewardVue /> -->
       </section>
       <section id="content3">
         <ContactVue />
@@ -61,7 +59,6 @@ body,
 
 .container {
   height: 100vh;
-  background-color: #343d46;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
@@ -90,12 +87,12 @@ header {
 #content1 {
   /* content 1 starts here */
   grid-area: content1;
+  
 }
 
 #content2 {
   /* content 2 starts here */
   grid-area: content2;
-  background-color: #434c67;
 }
 
 #content3 {

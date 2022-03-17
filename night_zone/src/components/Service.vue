@@ -12,52 +12,12 @@
             <li>Change</li>
           </ul>
         </div>
-        <div class="row-fadeIn-wrapper">
+        <div class="row-fadeIn-wrapper" v-for="(item, i) in users" :key="i">
           <!-- Row 1 -->
           <article class="row fadeIn nfl">
             <ul>
-              <li>RiceBoyy</li>
-              <li>0</li>
-              <li><button>Change</button></li>
-            </ul>
-          </article>
-        </div>
-        <div class="row-fadeIn-wrapper">
-          <!-- Row 1 -->
-          <article class="row fadeIn nfl">
-            <ul>
-              <li>tthyrrestrup</li>
-              <li>0</li>
-              <li><button>Change</button></li>
-            </ul>
-          </article>
-        </div>
-        <div class="row-fadeIn-wrapper">
-          <!-- Row 2 -->
-          <article class="row fadeIn nfl">
-            <ul>
-              <li>Punitato</li>
-              <li>0</li>
-              <li><button>Change</button></li>
-            </ul>
-          </article>
-        </div>
-        <div class="row-fadeIn-wrapper">
-          <!-- Row 3 -->
-          <article class="row fadeIn nfl">
-            <ul>
-              <li>H4vee</li>
-              <li>0</li>
-              <li><button>Change</button></li>
-            </ul>
-          </article>
-        </div>
-        <div class="row-fadeIn-wrapper">
-          <!-- Row 4 -->
-          <article class="row fadeIn nfl">
-            <ul>
-              <li>Pott3r</li>
-              <li>0</li>
+              <li>{{ item.username }}</li>
+              <li>{{ item.score }}</li>
               <li><button>Change</button></li>
             </ul>
           </article>
@@ -67,7 +27,54 @@
   </div>
 </template>
 
-<script src="../JS/userAccount.js"></script>
+<script>
+import { db } from "../firebase";
+import { collection, getDocs } from "firebase/firestore/lite";
+
+export default {
+    data() {
+        return {
+          userIDS: [],
+          users: [],
+        }
+    },
+
+    methods: {
+      // firestore database user
+      async getUserCol(db) {
+        const userCol = collection(db, "user");
+        const userSnap = await getDocs(userCol);
+        const userList = userSnap.docs.map((item) => item.data());
+        return userList;
+      },
+
+      // data array loop user
+      async getUsers(db) {
+        const users = this.getUserCol(db).then((_data) => {
+          //console.log(_data); // to see array remove it when done
+          return _data;
+        });
+        const a = await users;
+        for (let i = 0; a.length > i; i++) {
+          this.users.push(a[i]);
+        }
+      },
+  
+      // firestore add point
+      async updateUser(db, userID, points) {
+        const userRef = doc(db, "user", userID);
+        await updateDoc(userRef, {
+          score: points,
+        });
+      },
+  
+    },
+  
+    mounted() {
+      this.getUsers(db);
+    }
+}
+</script>
 
 <style lang="scss">
 #Service-wrapper {

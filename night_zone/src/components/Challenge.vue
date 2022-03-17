@@ -10,44 +10,11 @@
           <div v-for="(type, j) in item.gameType" :key="j">
             <span class="earn-gameType">{{ type }}</span>
           </div>
-          <span class="earn-point">{{ item.point }}</span>
+          <span class="earn-point">{{ item.point }} point</span>
         </li>
       </ul>
     </div>
-    <div class="lose">
-      <!-- How to lose points -->
-      <h1>How to lose points</h1>
-      <ul class="earn-wrap">
-        <li>
-          <h2>01</h2>
-          <h3>LAST</h3>
-          <p>
-            If the PERSON is bottom fragger on your team, you will lose 1 point. It will
-            qualify as a lost.
-          </p>
-          <span class="earn-gameType">Custom Game</span>
-          <span class="earn-gameType">Unreated</span>
-          <span class="earn-gameType">Ranked</span>
-          <br />
-          <br />
-          <span class="earn-point">-1 Point</span>
-        </li>
-        <li>
-          <h2>02</h2>
-          <h3>LAST IN ALL</h3>
-          <p>
-            If the PERSON are at the bottem of the score board out of every player in the
-            game. It will qualify as a lost.
-          </p>
-          <span class="earn-gameType">Custom Game</span>
-          <span class="earn-gameType">Unreated</span>
-          <span class="earn-gameType">Ranked</span>
-          <br />
-          <br />
-          <span class="earn-point">-2 Point</span>
-        </li>
-      </ul>
-    </div>
+    
   </div>
 </template>
 
@@ -72,13 +39,13 @@ export default {
         const ChallengeList = ChallengeSnap.docs.map((item) => item.data());
         return ChallengeList;
       },
+
       // data array loop challenge
       async getChallenges(db) {
         const challenges = this.getChallengeCol(db).then((_data) => {
           //console.log(_data); // to see array remove it when done
           return _data;
         });
-
         const a = await challenges;
         for (let i = 0; a.length > i; i++) {
           this.challenges.push(a[i]);
@@ -110,24 +77,10 @@ export default {
 
 <style lang="scss" scoped>
 #Challenge-wrapper {
-  background-color: #434c67;
+  background-color: #21242b;
 }
 .Earn {
   padding: 4rem;
-}
-.lose {
-  padding: 4rem;
-}
-
-.lose h1 {
-  text-align: center;
-  color: #fff;
-  margin: 0;
-  padding: 2rem;
-}
-
-.pointlist {
-  padding: 6rem;
 }
 
 .Earn h1 {
@@ -159,6 +112,19 @@ export default {
   background: #262a2b;
   border: 1px solid #252727;
   text-align: left;
+
+  background-image: 
+    linear-gradient(to bottom,
+      rgba(61, 7, 57, 0.747),
+      rgb(116, 23, 119), 
+      rgb(81, 14, 83),
+      rgba(61, 7, 57, 0.747),
+    
+    );
+  image-rendering: auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .earn-wrap li h2 {

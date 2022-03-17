@@ -1,209 +1,93 @@
 <template>
-  <div id="about-wrapper">
-    <h1>About</h1>
-    <div id="about-content">
-      <p>
-        Wellcome to night zone. This project is about a point system game, that it's made
-        for twitch streamers and the streamers followers. This game is very easy to
-        understand.
-      </p>
-      <br>
-      <p>
-        The rules are very simple, you as a user play a game like a first person shooter
-        game. While you and your team plays the game of you're choice. There are mission
-        for how you group kills the enemy team. You will be rewarded with points, and with
-        does points you and you're group will be able to redeem something.
-      </p>
-      <br>
-      <p>
-        There are penalties in this little game. That can be if you are in the last place
-        on your team. you will get minus points.
-        This game was made for these twitch streamers, and are avaleble for everybody.
-      </p>
-    </div>
-    <div class="twitch-users">
-      <a class="link-twitch" href="https://www.twitch.tv/tthyrrestrup">
-        <!-- new user -->
-        <div class="box">
-          <div class="box-img">
-            <img
-              class="twitch-img"
-              src="../assets/img6.png"
-              alt="https://www.twitch.tv/tthyrrestrup"
-            />
-          </div>
-          <div class="box-title title-white">
-            <p>tthyrrestrup</p>
-          </div>
-        </div>
-      </a>
-      <a class="link-twitch" href="https://www.twitch.tv/punitato">
-        <!-- new user -->
-        <div class="box">
-          <div class="box-img">
-            <img
-              class="twitch-img"
-              src="../assets/img1.png"
-              alt="https://www.twitch.tv/punitato"
-            />
-          </div>
-          <div class="box-title title-white">
-            <p>punitato</p>
-          </div>
-        </div>
-      </a>
-      <a class="link-twitch" href="https://www.twitch.tv/h4vee">
-        <!-- new user -->
-        <div class="box">
-          <div class="box-img">
-            <img
-              class="twitch-img"
-              src="../assets/img2.png"
-              alt="https://www.twitch.tv/h4vee"
-            />
-          </div>
-          <div class="box-title title-white">
-            <p>h4vee</p>
-          </div>
-        </div>
-      </a>
-      <a class="link-twitch" href="https://www.twitch.tv/pott3r">
-        <!-- new user -->
-        <div class="box">
-          <div class="box-img">
-            <img
-              class="twitch-img"
-              src="../assets/img4.png"
-              alt="https://www.twitch.tv/pott3r"
-            />
-          </div>
-          <div class="box-title title-white">
-            <p>Pott3r</p>
-          </div>
-        </div>
-      </a>
-    </div>
-    <div class="User-mentions">
-      <h2>Honorable Mentions</h2>
-      <p>
-        Here are some user that are not connected to twitch but are joined in on this
-        game.
-      </p>
-      <div>
-        <div class="box">
-          <!-- new user -->
-          <div class="box-img">
-            <img class="twitch-img" src="../assets/img7.jpg" alt="RiceBoyy" />
-          </div>
-          <div class="box-title title-white">
-            <p>RiceBoyy</p>
-          </div>
-        </div>
+  <div class="a-container">
+    <div class="ab-container"> <!-- about us -->
+      <div class="ab-wrap ab-1">
+        <h1 class="ab-head">Challenge you're Squad</h1>
+          <p class="ab-text ab-style-1">
+            Twitch Family is about creating a new challenge, 
+            experiens and entertaintment complete free!
+            We will try to help you have more fun.
+          </p>
+          <a href="" class="links">Join us</a>
+      </div>
+      <div class="ab-wrap ab-2">
+        <h1 class="ab-head ab-head-2">Rules</h1>
+        <p class="ab-text">
+          The rules are very simple.
+          You and you're team complete a challenge that is listet on Twtich family.
+          When you or one of you're team complete a challenge you will earn a surden amount of points.
+        
+          There is also penalties which will rise you're teams competition.
+          Penalties will only take the points you have collected, so you will never hit the bottom.
+        </p>
+      </div>
+      <div class="ab-wrap ab-3">
+        <h1 class="ab-head ab-head-2">other games</h1>
+        <p class="ab-text">
+          there is also a drinking challenge that can be added to the game.
+          That will give you challenges that are more fun when you team is drinking.
+          It also required that all of you're teammate are at the legal age of drinking,
+          undless you're teammate that are not able to drink alkohol drink something else.
+        </p>
+        <a href="" class="links">start drinking</a>
+        <img src="" alt="">
+      </div>
+      <div class="ab-wrap ab-4 ab-end">
+        <h1 class="ab-head ab-head-2">LET'S GO!</h1>
+        <p class="ab-text">
+          So get ready kings and queens, take arm and get ready to duel.
+          because this fight will be memories you will think about though your gaming life. 
+        </p>
+        <a href="" class="links">Start Game</a>
       </div>
     </div>
   </div>
 </template>
 
-<style>
-#about-wrapper {
-  background-color: #434c67;
-  padding: 1.5rem;
-}
-
-#about-wrapper h1 {
-  text-align: center;
-  color: #fff;
-}
-
-@media (min-width: 700px) {
-  #about-content p {
-    padding: 0 10rem;
+<style lang="scss" scoped>
+  .a-container {
+    height: 100%;
+    background-color: #21242b;
   }
 
-  .twitch-users {
-    width: 100%;
-    padding: 1rem;
+  .ab-container {
+    padding: 5rem;
   }
-}
+  // the first header
+  .ab-wrap {
+    margin-left: 5rem;
+    margin-right: 5rem;
+    padding: 5rem;
+  }
+  .ab-1 {
+    text-align: center;
+  }
+  .ab-style-1 {
+    margin-left: 5rem;
+    margin-right: 5rem;
+  }
+  // second part
+  .ab-1, .ab-2, .ab-3, .ab-4 {
+    background-color:#674365;
+    margin-bottom: 5rem;
+  }
+  .ab-head-2 {
+    text-align: center;
+  }
+  // all the text style
+  .links {
+    text-decoration: none;
+    color: #dcddde;
+  }
+  .ab-head {
+    color: #dcddde;
+    font-size: 3em;
+    font-family: 'Palette Mosaic', cursive;
+  }
+  .ab-text {
+    color: #fff;
+    font-size: 1.5em;
+    font-family: 'Indie Flower', cursive;
+  }
 
-#about-content p {
-  font-family: "Anonymous Pro", Monospace;
-  color: #fff;
-  line-height: 1.5em;
-}
-
-.twitch-users {
-  /* Twitch container */
-  z-index: 0;
-  margin: auto;
-  width: 50%;
-  padding: 10px;
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  border-radius: 5px;
-}
-
-.link-twitch {
-  text-decoration: none;
-}
-
-.box {
-  margin: 30px auto;
-  width: 130px;
-  height: 130px;
-  border-radius: 40px;
-  box-shadow: 5px 5px 30px 7px rgba(0, 0, 0, 0.25), -5px -5px 30px 7px rgba(0, 0, 0, 0.22);
-  cursor: pointer;
-  transition: 0.4s;
-}
-
-.box:hover {
-  transform: scale(0.9, 0.9);
-  box-shadow: 5px 5px 30px 15px rgba(0, 0, 0, 0.25),
-    -5px -5px 30px 15px rgba(0, 0, 0, 0.22);
-}
-
-.box .box-img {
-  width: inherit;
-  height: inherit;
-  border-radius: 40px;
-}
-
-.box .box-img img {
-  width: inherit;
-  height: inherit;
-  border-radius: 40px;
-  object-fit: cover;
-}
-
-.box .box-title {
-  text-align: center;
-  border-radius: 0px 0px 40px 40px;
-  font-family: sans-serif;
-  font-weight: bold;
-  font-size: 20px;
-  margin-top: -10px;
-  height: 40px;
-}
-
-.title-white {
-  color: #fff;
-}
-.User-mentions {
-  padding: 5rem;
-}
-
-.User-mentions h2 {
-  /* Honorable mention */
-  color: #fff;
-  text-align: center;
-  font-family: monospace, "Papyrus";
-}
-
-.User-mentions p {
-  color: #fff;
-  text-align: center;
-  font-family: "Anonymous Pro", Monospace;
-}
 </style>
