@@ -78,7 +78,7 @@ export default {
 
 <style lang="scss">
 #Service-wrapper {
-  background-color: #434c67;
+  background-color: #21242b;
 }
 
 // Porint System

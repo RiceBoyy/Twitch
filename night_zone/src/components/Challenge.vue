@@ -115,36 +115,25 @@ export default {
 
   background-image: 
     linear-gradient(to bottom,
-      rgba(61, 7, 57, 0.747),
-      rgb(116, 23, 119), 
-      rgb(81, 14, 83),
-      rgba(61, 7, 57, 0.747),
-    
+      #cf8da7,
+      #aa5377,
+      #8a4461,
+      #3b3759
     );
   image-rendering: auto;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
-
-.earn-wrap li h2 {
-  font-size: 110px;
-  margin: 0;
-  position: absolute;
-  opacity: 0.2;
-  top: 10px;
-  right: 10px;
-  transition: all 0.3s ease-in-out;
-}
 .earn-wrap li h3 {
-  font-size: 18px;
-  color: #b7b7b7;
+  font-size: 1.4rem;
+  color: #fff;
   margin-bottom: 3px;
 }
 
 .earn-wrap li span {
   text-align: center;
-  font-size: 10px;
+  font-size: 12px;
   border-radius: 45px;
   color: #fff;
   margin-right: 2px;
@@ -153,6 +142,7 @@ export default {
 .earn-gameType {
   background-color: #161616;
   border: #161616 solid 5px;
+  float: left;
 }
 
 .earn-point {
@@ -167,7 +157,8 @@ export default {
 .earn-wrap li p {
   font-size: 12px;
   line-height: 18px;
-  color: #b7b7b7;
+  color: rgba(255, 255, 255, 0.842);
   margin-top: 5px;
+  margin-bottom: 1rem;
 }
 </style>

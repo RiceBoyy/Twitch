@@ -23,7 +23,6 @@ import ChallengeVue from "./components/Challenge.vue"
       <section id="content2">
         <ChallengeVue />
         <ServiceVue />
-        <!-- <RewardVue /> -->
       </section>
       <section id="content3">
         <ContactVue />
