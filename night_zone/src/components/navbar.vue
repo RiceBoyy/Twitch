@@ -12,9 +12,8 @@
 </template>
 
 <style lang="scss">
-    nav {
-  /* navbar starts here */
-  
+nav {
+  /* navbar starts here */  
   background-color: #161b2179;
   color: #000;
   width: 100vw;

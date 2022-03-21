@@ -1,56 +1,50 @@
 <template>
-  <div id="Contact">
-    <h1>Contact</h1>
+<div id="Contact">
+    <h1>Join Our Discord</h1>
     <div class="contact-wrapper">
-      <p>
-        This website is made (AsianDude) AKA RiceBoyy, and credit to (TOXIC) for name picking.<br />
-        If you wish to come and join us or just want to come in contact with the developer
-        and the streamers. <br> 
-        You can join ours discord servers down below.
-      </p>
-      <ul>
-        <li>
-          <a href="https://discord.gg/caSGyAMMnc">
-            <!-- new user -->
-            <div class="box">
-              <div class="box-img">
-                <img class="twitch-img" src="../assets/img7.jpg" />
-              </div>
-              <div class="box-title title-white">
-                <p>RiceBoyy's Discord</p>
-              </div>
-            </div>
-          </a>
-        </li>
-        <li>
-          <a href="https://discord.gg/K4DU8QZ3A2">
-            <!-- new user -->
-            <div class="box">
-              <div class="box-img">
-                <img class="twitch-img" src="../assets/img6.png" />
-              </div>
-              <div class="box-title title-white">
-                <p>TThyrrestrup's discord</p>
-              </div>
-            </div>
-          </a>
-        </li>
-        <li>
-          <a href="https://discord.gg/W7DjB75cDd">
-            <!-- new user -->
-            <div class="box">
-              <div class="box-img">
-                <img class="twitch-img" src="../assets/img1.png" />
-              </div>
-              <div class="box-title title-white">
-                <p>Punitato's Discord</p>
-              </div>
-            </div>
-          </a>
-        </li>
-      </ul>
-    </div>
-  </div>
+        <ul>
+            <li>
+                <a href="https://discord.gg/caSGyAMMnc">
+                    <!-- new user -->
+                    <div class="box">
+                        <div class="box-img">
+                            <img class="twitch-img" src="../assets/img7.jpg" />
+                        </div>
+                        <div class="box-title title-white">
+                            <p>RiceBoyy's Discord</p>
+                        </div>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="https://discord.gg/K4DU8QZ3A2">
+                    <!-- new user -->
+                    <div class="box">
+                        <div class="box-img">
+                            <img class="twitch-img" src="../assets/img6.png" />
+                        </div>
+                        <div class="box-title title-white">
+                            <p>TThyrrestrup's discord</p>
+                        </div>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="https://discord.gg/W7DjB75cDd">
+                    <!-- new user -->
+                    <div class="box">
+                        <div class="box-img">
+                            <img class="twitch-img" src="../assets/img1.png" />
+                        </div>
+                        <div class="box-title title-white">
+                            <p>Punitato's Discord</p>
+                        </div>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>    
+</div>
 </template>
 
 <style lang="scss" scoped>
@@ -59,7 +53,7 @@
 }
 #Contact {
   background-color: #21242b;
-  padding: 6rem
+  padding: 6rem;
 }
 #Contact h1,
 .contact-wrapper p {

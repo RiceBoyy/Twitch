@@ -92,12 +92,12 @@ header {
 #content2 {
   /* content 2 starts here */
   grid-area: content2;
+  background-color: #21242b;
 }
 
 #content3 {
   /* content 3 starts here */
   grid-area: content3;
-  background-color: #434c67;
 }
 
 footer {

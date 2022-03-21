@@ -11,7 +11,7 @@
     "debounce": "^1.2.1",
     "firebase": "^9.6.8",
     "vue": "^3.2.25",
-    "vue-router": "^4.0.13"
+    "vue-router": "^4.0.14"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^2.2.0",
