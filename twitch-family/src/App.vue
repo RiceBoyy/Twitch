@@ -21,6 +21,19 @@
 </template>
 
 <style lang="scss">
+:root {
+  --bg-color:     #21242b;
+  --main-color:   #cf8da7;
+  --main-2-color: #aa5377;
+  --main-3-color: #3b3759;
+  --main-4-color: #7aacb3;
+  --main-5-color: #4c6e81;
+
+  --box-p-ud: 2rem 0 2rem 0;
+  --box-p-lr: 0 2rem 0 2rem;
+  --box-all: 5rem;
+}
+
 
 body,
 * {
@@ -73,11 +86,11 @@ nav {
           text-transform: uppercase;
 
           &.router-link-exact-active {
-            color: #b94287;
+            color: var(--main-color);
           }
         }
         a:hover {
-          border-bottom: 1px solid rgb(140, 28, 184);
+          border-bottom: 1px solid var(--main-2-color);
           color: rgb(218, 218, 218);
           transition: all 1s ease;
           -webkit-transition: all 1s ease;

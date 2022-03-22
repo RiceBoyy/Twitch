@@ -21,6 +21,11 @@ const routes = [
     component: () => import( '../views/ServiceView.vue')
   },
   {
+    path: '/userUpdate',
+    name: 'userUpdate',
+    component: () => import( '../components/UpdateUser.vue')
+  },
+  {
     path: '/contact',
     name: 'contact',
     component: () => import( '../views/ContactView.vue')

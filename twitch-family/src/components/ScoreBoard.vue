@@ -6,9 +6,8 @@
         <div class="point-wrapper">
             <div class="Mainpoint row title">
             <ul>
-                <li>username</li>
-                <li>points</li>
-                <li>Change</li>
+                <li>Challengers Name</li>
+                <li>Amount of Points</li>
             </ul>
         </div>
         <div class="row-fadeIn-wrapper" v-for="(item, i) in users" :key="i">
@@ -17,7 +16,6 @@
                 <ul>
                     <li>{{ item.username }}</li>
                     <li>{{ item.score }}</li>
-                    <li><button>Change</button></li>
                 </ul>
             </article>
         </div>
@@ -107,7 +105,7 @@ export default {
     font-weight: normal;
     list-style: none;
     display: inline-block;
-    width: 30%;
+    width: 45%;
     box-sizing: border-box;
     @media only screen and (max-width: 767px) and (min-width: 480px) {
         font-size: 13px;
@@ -119,6 +117,10 @@ export default {
 
 .title ul li {
     padding: 13px 13px;
+}
+
+.Mainpoint {
+    text-transform: uppercase;
 }
 
 .row ul li {
