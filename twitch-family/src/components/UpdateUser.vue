@@ -6,15 +6,21 @@
                 <form action="">
                     <h1>Wellcome back Challenger</h1>
                     <p>So how did it go with the given Quest? hopefully it went well...</p>
-                    <input type="text" name="username" placeholder="username" required>
-                    <input type="text" name="password" placeholder="gate key" required>
-                    <br>
-                    <input type="checkbox" name="add" id="add">
-                    <label for="">did you clear the challenge?</label>
-                    <br>
-                    <input type="checkbox" name="remove" id="remove">
-                    <label for="">did you fail the challenge?</label>
-                    <input type="number" name="amount" id="amount" placeholder="amount" required>
+                    <div class="uu-location">
+                        <input type="text" name="username" id="username" placeholder="username" required>
+                        <input type="text" name="password" placeholder="gate key" required>
+                    </div>
+                    <div class="uu-p">
+                        <input type="checkbox" name="add" id="add">
+                        <label for="">did you clear the challenge?</label>
+                    </div>
+                    <div class="uu-n">
+                        <input type="checkbox" name="remove" id="remove">
+                        <label for="">did you fail the challenge?</label>
+                    </div>
+                    <div class="uu-amount">
+                        <input type="number" name="amount" id="amount" placeholder="amount" required>
+                    </div>
                     <button type="submit">Submit</button>
                 </form>
             </div>
@@ -46,7 +52,7 @@ export default {
     
 }
 
-.updateP {
+.updateP form {
     background-color: #fff;
     padding: 5rem;
     box-shadow: 0 30px 60px 0 rgb(90 116 148 / 40%);
@@ -73,7 +79,25 @@ export default {
     input {
         display:inline-block;
         text-align: center;
-        max-width: 300px;
+        max-width: 400px;
+    }
+}
+
+.uu-location, .uu-p, .uu-n, .uu-amount {
+    width: 100%;
+    padding-bottom: 2rem;
+    display: inline-flexbox;
+    
+    label {
+        color: #000;
+    }
+}
+
+.uu-location {
+    padding-top: 2rem;
+
+    #username {
+        border: #fff;
     }
 }
 
