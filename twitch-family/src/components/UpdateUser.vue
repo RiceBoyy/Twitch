@@ -46,7 +46,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Kanit:wght@100&family=Pacifico&family=Palette+Mosaic&display=swap');
 .uu-container {
     height: 100vh;
     display: grid;
