@@ -48,12 +48,9 @@
 </template>
 
 <style lang="scss" scoped>
-.contact-wrapper {
-  padding: 2rem;
-}
+
 #Contact {
   background-color: #21242b;
-  padding: 6rem;
 }
 #Contact h1,
 .contact-wrapper p {

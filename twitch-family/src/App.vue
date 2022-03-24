@@ -23,7 +23,7 @@
 <style lang="scss">
 :root {
   --bg-color:     #21242b;
-  --main-color:   #cf8da7;
+  --main-1-color: #cf8da7;
   --main-2-color: #aa5377;
   --main-3-color: #3b3759;
   --main-4-color: #7aacb3;
@@ -86,7 +86,7 @@ nav {
           text-transform: uppercase;
 
           &.router-link-exact-active {
-            color: var(--main-color);
+            color: var(--main-1-color);
           }
         }
         a:hover {
