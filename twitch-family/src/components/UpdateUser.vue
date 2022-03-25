@@ -3,31 +3,70 @@
         <div class="uu-wrapper">
             
             <div class="updateP">
-                <form action="">
+                <form v-on:submit="UpdateUser">
                     <h1>Wellcome back Challenger</h1>
                     <p>So how did it go with the given Quest? hopefully it went well...</p>
+
+                    <!-- username input -->
                     <div class="uu-location">
                         <label for="username" class="__label">username</label>
-                        <input type="text" name="username" id="username" required>
+                        <input 
+                            type="text" 
+                            name="username" 
+                            id="username" 
+                            v-model="username"
+                            required
+                        >
                     </div>
+
+                    <!-- password input -->
                     <div class="uu-key">
                         <label for="password" class="__label">gate keepers key</label>
-                        <input type="password" name="password" id="password" required>
+                        <input 
+                            type="password" 
+                            name="password" 
+                            id="password" 
+                            v-model="password"
+                            required
+                        >
                     </div>
+
+                    <!-- checkbox postive or negtive -->
                     <div class="uu-p">
-                        <input type="checkbox" name="add" id="add">
-                        <label for=""> did you clear the challenge?</label>
+                        <input 
+                            type="checkbox" 
+                            name="add" 
+                            id="add" 
+                            v-model.bool="positive"
+                        >
+                        <label for="checkbox"> did you clear the challenge?</label>
                     </div>
                     <div class="uu-n">
-                        <input type="checkbox" name="remove" id="remove">
-                        <label for=""> did you fail the challenge?</label>
+                        <input 
+                            type="checkbox" 
+                            name="remove" 
+                            id="remove" 
+                            v-model.bool="negative"
+                        >
+                        <label for="checkbox"> did you fail the challenge?</label>
                     </div>
+                    
+                    <!-- amount input -->
                     <div class="uu-amount">
                         <label for="username" class="__label">amount</label>
-                        <input type="number" name="amount" id="amount"  required>
+                        <input 
+                            type="number" 
+                            name="a" 
+                            id="amount" 
+                            v-model="amount"
+                            max="10"
+                            required
+                        >
                     </div>
+
+                    <!-- button to sumbit change -->
                     <div class="uu-submit">
-                        <button type="submit">Submit</button>
+                        <button type="submit" >Submit</button>
                     </div>
                 </form>
             </div>
@@ -36,11 +75,55 @@
 </template>
 
 <script>
+
+/* 
+    help there might be useful
+    form - https://www.youtube.com/watch?v=x5ikRZVPMJY
+    form - https://www.youtube.com/watch?v=88GmtsdyXVY
+*/
+
+import { collection, updateDoc, getDocs } from "firebase/firestore/lite";
+
 export default {
-    data() {
-        return {};
+    data: function() {
+        return {
+            username: "",
+            password: "",
+            positive: false,
+            negative: false,
+            amount: "",
+        }
+
     },
-    methods: {},
+    methods: {
+        async getUserCol(db) {
+            const uesrCol = collection(db, 'user');
+            const userSnap = await getDocs(userCol);
+            const userList = userSnap.docs.map((item) => item.data());
+            return userList;
+        },
+        async getUsers(db) {
+            const users = this.getUserCol(db).then((_data) => {
+            //console.log(_data); // to see array remove it when done
+                return _data;
+            });
+            const a = await users;
+
+            /* goes though the user list */
+            for (let i = 0; a.length > i; i++) {
+                this.users.push(a[i]);
+            }
+        },
+        async UpdateUser(e, db, userID, score) {
+            e.preventDefault(); // it prevent from page reload
+            const un = this.username;
+            const pw = this.password;
+            const pt = this.positive;
+            const ng = this.negative;
+            const am = this.amount;
+            
+        }
+    },
     mounted() {},
 };
 </script>
