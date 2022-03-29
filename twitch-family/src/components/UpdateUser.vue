@@ -3,7 +3,7 @@
         <div class="uu-wrapper">
             
             <div class="updateP">
-                <form v-on:submit="UpdateUser">
+                <form>
                     <h1>Wellcome back Challenger</h1>
                     <p>So how did it go with the given Quest? hopefully it went well...</p>
 
@@ -19,25 +19,13 @@
                         >
                     </div>
 
-                    <!-- password input -->
-                    <div class="uu-key">
-                        <label for="password" class="__label">gate keepers key</label>
-                        <input 
-                            type="password" 
-                            name="password" 
-                            id="password" 
-                            v-model="password"
-                            required
-                        >
-                    </div>
-
-                    <!-- checkbox postive or negtive -->
+                    <!-- checkbox postive or negtive 
                     <div class="uu-p">
                         <input 
                             type="checkbox" 
                             name="add" 
                             id="add" 
-                            v-model.bool="positive"
+                            v-model.bool="FormData.positive"
                         >
                         <label for="checkbox"> did you clear the challenge?</label>
                     </div>
@@ -46,10 +34,11 @@
                             type="checkbox" 
                             name="remove" 
                             id="remove" 
-                            v-model.bool="negative"
+                            v-model.bool="FormData.negative"
                         >
                         <label for="checkbox"> did you fail the challenge?</label>
                     </div>
+                    -->
                     
                     <!-- amount input -->
                     <div class="uu-amount">
@@ -66,7 +55,7 @@
 
                     <!-- button to sumbit change -->
                     <div class="uu-submit">
-                        <button type="submit" >Submit</button>
+                        <button type="submit" @click="SaveData">Submit</button>
                     </div>
                 </form>
             </div>
@@ -82,49 +71,47 @@
     form - https://www.youtube.com/watch?v=88GmtsdyXVY
 */
 
-import { collection, updateDoc, getDocs } from "firebase/firestore/lite";
+import { db } from "@/store/firebase";
+import { async } from "@firebase/util";
+import { collection, updateDoc, getDocs } from "firebase/firestore";
 
 export default {
-    data: function() {
+    data() {
         return {
-            username: "",
-            password: "",
-            positive: false,
-            negative: false,
-            amount: "",
+            account: {
+                username: null,
+                score: null,
+                image: null
+            }
         }
 
     },
     methods: {
-        async getUserCol(db) {
-            const uesrCol = collection(db, 'user');
-            const userSnap = await getDocs(userCol);
-            const userList = userSnap.docs.map((item) => item.data());
-            return userList;
-        },
-        async getUsers(db) {
-            const users = this.getUserCol(db).then((_data) => {
-            //console.log(_data); // to see array remove it when done
-                return _data;
+        // this is for reading the data
+            readData() {
+            db.collection("user").get().then((querySnapshot) => {
+                querySnapshot.forEach((doc) => {
+                    this.user.push(doc.data());
+                });
             });
-            const a = await users;
-
-            /* goes though the user list */
-            for (let i = 0; a.length > i; i++) {
-                this.users.push(a[i]);
-            }
         },
-        async UpdateUser(e, db, userID, score) {
-            e.preventDefault(); // it prevent from page reload
-            const un = this.username;
-            const pw = this.password;
-            const pt = this.positive;
-            const ng = this.negative;
-            const am = this.amount;
-            
-        }
+    // this is for saving the data
+        saveData() {
+            db.collection("user").add(this.account).then((docRef) => {
+                console.log("Document written with ID: ", docRef.id);
+                this.reset();
+            }).catch(function(error) {
+                console.error("Error adding document: ", error);
+            });
+        },
+        reset() {
+            Object.assign(this.$data, this.$options.data.apply(this));
+        },
     },
-    mounted() {},
+    
+    mounted() {
+        this.saveData();
+    },
 };
 </script>
 
