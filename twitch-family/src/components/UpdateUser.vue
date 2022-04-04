@@ -14,7 +14,7 @@
                             type="text" 
                             name="username" 
                             id="username" 
-                            v-model="username"
+                            v-model="account.username"
                             required
                         >
                     </div>
@@ -47,7 +47,7 @@
                             type="number" 
                             name="a" 
                             id="amount" 
-                            v-model="amount"
+                            v-model="account.amount"
                             max="10"
                             required
                         >
@@ -76,6 +76,10 @@ import { async } from "@firebase/util";
 import { collection, updateDoc, getDocs } from "firebase/firestore";
 
 export default {
+    name: 'UpdateUser',
+    props: {
+        msg: String
+    },
     data() {
         return {
             account: {
@@ -87,24 +91,36 @@ export default {
 
     },
     methods: {
-        // this is for reading the data
-            readData() {
-            db.collection("user").get().then((querySnapshot) => {
-                querySnapshot.forEach((doc) => {
-                    this.user.push(doc.data());
-                });
+        // firestore database user
+        async getUserCol(db) {
+            const userCol = collection(db, "user");
+            const userSnap = await getDocs(userCol);
+            const userList = userSnap.docs.map((item) => item.data());
+            return userList;
+        },
+
+      // data array loop user
+        async getUsers(db) {
+            const users = this.getUserCol(db).then((_data) => {
+            //console.log(_data); // to see array remove it when done
+            return _data;
             });
+            const a = await users;
+            for (let i = 0; a.length > i; i++) {
+            this.users.push(a[i]);
+            }
         },
     // this is for saving the data
-        saveData() {
-            db.collection("user").add(this.account).then((docRef) => {
-                console.log("Document written with ID: ", docRef.id);
-                this.reset();
-            }).catch(function(error) {
-                console.error("Error adding document: ", error);
+        async saveData(db) {
+            const saveUser = this.getUserCol.updateDoc(this.account)
+            .then(function(docRef){
+                console.log("Document Wrtieen With ID: ", docRef);
+            })
+            .catch(function(error) {
+                console.error("Error adding document: ", error)
             });
         },
-        reset() {
+        async reset(db) {
             Object.assign(this.$data, this.$options.data.apply(this));
         },
     },
