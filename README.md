@@ -1,3 +1,3 @@
 ## this is a Personal Project, Made By RiceBoyy...
-## I will be the soul responsiblity for thish projct.
-# this project is about a point system for my friends twitch.
+Right now im the only one on this project. This project is about a point system for my friends twitch stream.
+This project is not complete or even close to it.
